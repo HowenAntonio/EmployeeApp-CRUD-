@@ -1,0 +1,28 @@
+Proyek website yang harus kamu kerjakan adalah sebuah website
+perusahaan. Perusahaan tersebut ingin website dengan fitur-fitur sebagai
+berikut:
+1. Menampilkan daftar karyawan.
+2. Menambahkan karyawan baru.
+3. Memperbarui data karyawan yang sudah ada.
+4. Menghapus karyawan yang sudah tidak bekerja di perusahaan.
+5. Untuk menampilkan, menambahkan, memperbarui, dan menghapus dengan validasi sebagai berikut:
+- Nama karyawan (5 - 20 karakter)
+- Umur karyawan (lebih besar dari 20 tahun)
+- Alamat karyawan (10 - 40 karakter)
+- Nomor telp. karyawan (9 - 12 karakter, dimulai dari 08)
+6. Tampilan website dibuat semenarik mungkin menurut selera
+masing-masing
+
+
+
+Query Create Table Employee :
+CREATE TABLE `employees` (
+  `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(255) NOT NULL,
+  `age` INT NOT NULL,
+  `address` VARCHAR(255) COLLATE utf8mb4_unicode_ci,
+  `phone_number` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` TIMESTAMP NULL DEFAULT NULL,
+  `updated_at` TIMESTAMP NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
