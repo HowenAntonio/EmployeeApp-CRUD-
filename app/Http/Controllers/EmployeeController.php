@@ -10,7 +10,15 @@ class EmployeeController extends Controller
     public function index()
     {
         $employees = Employee::latest()->paginate(10);
-        return view('home', compact('employees'));
+
+        if (request()->wantsJson()) {
+            return response()->json([
+                'data' => $employees,
+            ], 200);
+        } else {
+            return view('home', compact('employees'));
+        }
+
     }
 
     public function create()
@@ -43,8 +51,15 @@ class EmployeeController extends Controller
 
         Employee::create($request->only('name', 'age', 'address', 'phone_number'));
 
-        return redirect()->route('employees.index')
-            ->with('success', 'Karyawan berhasil ditambahkan.');
+        if (request()->wantsJson()) {
+            return response()->json([
+                'message' => 'Karyawan berhasil ditambahkan.',
+            ], 201);
+        } else {
+            return redirect()->route('employees.index')
+                ->with('success', 'Karyawan berhasil ditambahkan.');
+        }
+
     }
 
     public function edit(Employee $employee)

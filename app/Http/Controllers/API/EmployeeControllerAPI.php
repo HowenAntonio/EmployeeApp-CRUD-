@@ -15,7 +15,9 @@ class EmployeeControllerAPI extends Controller
     {
         $employees = Employee::latest()->paginate(10);
         return response()->json([
-            'data' => $employees,
+            'data' => $employees->map(function ($employee) {
+                return $employee->makeHidden('id', 'created_at', 'updated_at');
+            }),
         ], 200);
     }
 

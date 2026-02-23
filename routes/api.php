@@ -11,7 +11,9 @@ Route::get('/', function () {
     ], 200);
 });
 
-Route::apiResource('employees', EmployeeControllerAPI::class);
+Route::name('api.')->group(function () {
+    Route::apiResource('employees', EmployeeControllerAPI::class);
+});
 
 // Route::get('/employees', [EmployeeController::class, 'index']);
 // Route::get('/employees/{employee}', [EmployeeController::class, 'show']);
