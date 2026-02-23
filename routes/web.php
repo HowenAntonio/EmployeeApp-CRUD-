@@ -1,22 +1,22 @@
 <?php
 
-use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\EmployeeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('layout');
+    return redirect()->route('employees.index');
 });
 
-Route::get('/cek-db', function () {
-    try {
-        DB::connection()->getPdo();
-        return "Database connected successfully!";
-    } catch (\Exception $e) {
-        return "Database not connected!";
-    }
-});
+Route::resource('employees', EmployeeController::class);
 
-Route::get('/employees', 'EmployeeController@index')->name('employees.index');
-Route::get('/employees/create', 'EmployeeController@create')->name('employees.create');
-Route::post('/employees', 'EmployeeController@store')->name('employees.store');
-Route::get('/employees/{employee}', 'EmployeeController@show')->name('employees.show');
+// Format buat route:
+// Route::http-method('nama-untuk-url', NamaController::class);
+
+// Route Resource artinya :
+// Route::get('/employees', [EmployeeController::class, 'index'])->name('employees.index');
+// Route::get('/employees/create', [EmployeeController::class, 'create'])->name('employees.create');
+// Route::post('/employees', [EmployeeController::class, 'store'])->name('employees.store');
+// Route::get('/employees/{employee}', [EmployeeController::class, 'show'])->name('employees.show');
+// Route::get('/employees/{employee}/edit', [EmployeeController::class, 'edit'])->name('employees.edit');
+// Route::put('/employees/{employee}', [EmployeeController::class, 'update'])->name('employees.update');
+// Route::delete('/employees/{employee}', [EmployeeController::class, 'destroy'])->name('employees.destroy');

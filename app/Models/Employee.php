@@ -14,4 +14,9 @@ class Employee extends Model
         'address',
         'phone_number',
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'name';
+    }
 }
