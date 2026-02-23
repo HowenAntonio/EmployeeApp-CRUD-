@@ -27,7 +27,7 @@
         </div>
 
         <div class="d-none flex-sm-fill d-sm-flex align-items-sm-center justify-content-sm-between">
-            <div class="mr-2">
+            <div class="me-2">
                 <p class="small text-muted">
                     {!! __('Menampilkan') !!}
                     <span class="fw-semibold">{{ $paginator->firstItem() }}</span>
@@ -39,7 +39,7 @@
                 </p>
             </div>
 
-            <div>
+            <div class="ms-2">
                 <ul class="pagination">
                     {{-- Previous Page Link --}}
                     @if ($paginator->onFirstPage())
