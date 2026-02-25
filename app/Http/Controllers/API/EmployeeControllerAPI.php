@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Models\Employee;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class EmployeeControllerAPI extends Controller
 {
@@ -26,7 +27,7 @@ class EmployeeControllerAPI extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'name'         => 'required|min:5|max:20',
             'age'          => 'required|integer|min:21',
             'address'      => 'required|min:10|max:40',
@@ -46,6 +47,13 @@ class EmployeeControllerAPI extends Controller
             'phone_number.max'      => 'Nomor telp. maksimal 12 karakter.',
             'phone_number.regex'    => 'Nomor telp. harus dimulai dari 08.',
         ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'message' => 'Data tidak valid.',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
 
         $isEmployeeExists = Employee::get()->where('name', $request->name)->where('age', $request->age)->first();
         if ($isEmployeeExists) {
@@ -76,8 +84,7 @@ class EmployeeControllerAPI extends Controller
      */
     public function update(Request $request, Employee $employee)
     {
-        
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'name'         => 'required|min:5|max:20',
             'age'          => 'required|integer|min:21',
             'address'      => 'required|min:10|max:40',
@@ -97,6 +104,13 @@ class EmployeeControllerAPI extends Controller
             'phone_number.max'      => 'Nomor telp. maksimal 12 karakter.',
             'phone_number.regex'    => 'Nomor telp. harus dimulai dari 08.',
         ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'message' => 'Data tidak valid.',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
 
         $isEmployeeExists = Employee::get()->where('name', $request->name)->where('age', $request->age)->where('id', '!=', $employee->id)->first();
         if ($isEmployeeExists) {
