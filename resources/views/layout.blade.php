@@ -20,7 +20,7 @@
             min-height: 100vh;
         }
 
-        /* ══ Header ══ */
+        /* Header */
         .site-header {
             background: linear-gradient(135deg, #059669 0%, #0284c7 100%);
             padding: 1rem 0;
@@ -43,10 +43,10 @@
             font-weight: 500;
         }
 
-        /* ══ Content ══ */
+        /* Content */
         .main-content { padding: 2.5rem 0 4rem; }
 
-        /* ══ Panel ══ */
+        /* Panel */
         .panel {
             background: #fff;
             border: 1px solid #a7f3d0;
@@ -69,7 +69,7 @@
             color: #065f46;
         }
 
-        /* ══ Buttons ══ */
+        /* Buttons */
         .btn-green {
             background: linear-gradient(135deg, #059669, #0284c7);
             color: #fff !important;
@@ -110,7 +110,7 @@
         }
         .btn-red:hover { background: #fef2f2; border-color: #f87171; }
 
-        /* ══ Form ══ */
+        /* Form */
         .form-label {
             font-size: 0.82rem;
             font-weight: 700;
@@ -138,7 +138,7 @@
         .form-control.is-invalid:focus { box-shadow: 0 0 0 3px rgba(239,68,68,.12); }
         .invalid-feedback { font-size: 0.84rem; color: #ef4444; margin-top: 0.25rem; }
 
-        /* ══ Alert ══ */
+        /* Alert */
         .alert-success {
             background: linear-gradient(90deg, #f0fdf4, #fff);
             color: #065f46;
@@ -148,7 +148,7 @@
             padding: 0.8rem 1.1rem;
         }
 
-        /* ══ Footer ══ */
+        /* Footer */
         .site-footer {
             text-align: center;
             padding: 1.2rem 0;
@@ -158,7 +158,7 @@
             margin-top: 2rem;
         }
 
-        /* ══ Page heading ══ */
+        /* Page heading */
         .page-title {
             font-size: 1.55rem;
             font-weight: 700;
@@ -173,7 +173,7 @@
             margin-bottom: 0;
         }
 
-        /* ══ Table ══ */
+        /* Table */
         .data-table { font-size: 0.97rem; }
         .thead-row {
             background: linear-gradient(90deg, #ecfdf5, #eff6ff) !important;
@@ -194,26 +194,26 @@
         .tr-data  { border-bottom: 1px solid #f0fdf4; transition: background .12s; }
         .tr-data:hover { background: #ecfdf5 !important; }
 
-        /* ══ Pagination ══ */
+        /* Pagination */
         .pagination-bar  { border-top: 2px solid #d1fae5; }
         .pagination-info { font-size: 0.9rem; color: #64748b; }
 
-        /* ══ Empty state ══ */
+        /* Empty state */
         .empty-icon { font-size: 4rem; line-height: 1; color: #6ee7b7; }
         .empty-text { font-size: 0.97rem; color: #64748b; }
 
-        /* ══ Breadcrumb ══ */
+        /* Breadcrumb */
         .breadcrumb-bar  { font-size: 0.92rem; color: #64748b; }
         .breadcrumb-link { color: #059669; text-decoration: none; font-weight: 600; }
         .breadcrumb-link:hover { color: #047857; text-decoration: underline; }
 
-        /* ══ Panel body ══ */
+        /* Panel body */
         .panel-body { padding: 1.75rem 1.6rem; }
 
-        /* ══ Field hint ══ */
+        /* Field hint */
         .field-hint { font-size: 0.82rem; color: #94a3b8; margin-top: 4px; }
 
-        /* ══ Form action bar ══ */
+        /* Form action bar */
         .form-actions {
             display: flex;
             gap: 0.6rem;
@@ -222,7 +222,7 @@
             margin-top: 0.25rem;
         }
 
-        /* ══ ID Badge ══ */
+        /* ID Badge */
         .id-badge {
             font-size: 0.8rem;
             color: #0369a1;
@@ -233,7 +233,7 @@
             font-weight: 600;
         }
 
-        /* ══ Employee name in breadcrumb ══ */
+        /* Employee name in breadcrumb */
         .text-dark-strong { color: #0f172a; font-weight: 600; }
     </style>
 </head>
